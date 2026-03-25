@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Architectural Strategist | Lucas Carvalho Goulart</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#3c0091",
+                        "on-surface-variant": "#c6c6cd",
+                        "surface": "#0c1324",
+                        "on-primary": "#263143",
+                        "surface-container": "#191f31",
+                        "secondary": "#4edea3",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-on-surface": "#2a3043",
+                        "surface-dim": "#0c1324",
+                        "on-tertiary-fixed": "#23005c",
+                        "tertiary": "#d0bcff",
+                        "on-tertiary-container": "#9162fc",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-secondary": "#003824",
+                        "outline": "#909097",
+                        "on-background": "#dce1fb",
+                        "secondary-container": "#00a572",
+                        "surface-container-highest": "#2e3447",
+                        "inverse-primary": "#545f73",
+                        "tertiary-container": "#1e0052",
+                        "error-container": "#93000a",
+                        "on-surface": "#dce1fb",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#bcc7de",
+                        "tertiary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-high": "#23293c",
+                        "surface-container-low": "#151b2d",
+                        "surface-variant": "#2e3447",
+                        "on-secondary-fixed": "#002113",
+                        "primary-fixed": "#d8e3fb",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-surface": "#dce1fb",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed-variant": "#5516be",
+                        "on-primary-fixed": "#111c2d",
+                        "on-secondary-container": "#00311f",
+                        "primary-container": "#0c1829",
+                        "surface-container-lowest": "#070d1f",
+                        "on-primary-container": "#768197",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#45464d",
+                        "primary": "#bcc7de",
+                        "on-error": "#690005",
+                        "surface-bright": "#33394c",
+                        "background": "#0c1324"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <script>
+        var _i18n = {
+            en: {
+                'nav.home': 'Home', 'nav.experience': 'Experience', 'nav.skills': 'Skills', 'nav.contact': 'Contact',
+                'home.title': 'LUCAS CARVALHO GOULART',
+                'sidebar.subtitle': 'Tech Lead',
+                'home.hero.title': "Developing Robust <span class='text-secondary'>SaaS Solutions</span>",
+                'home.hero.desc': 'Strategizing and executing complex enterprise software transitions. Specialized in bridging the gap between legacy reliability and modern SaaS scalability through Delphi, C#, and Cloud-native architectures.',
+                'home.hero.badge': 'Available for Strategy Consulting',
+                'skills.title': "Technical <span class='text-secondary'>Arsenal</span>",
+                'skills.desc': 'Bridging the gap between legacy reliability and modern cloud scale. A specialized focus on high-performance architecture and strategic engineering leadership.',
+                'skills.legacy.title': 'Legacy Mastery',
+                'skills.legacy.desc': 'Expertise in maintaining, scaling, and modernizing large-scale mission-critical systems built on <strong>Delphi</strong>. Deep understanding of memory management, low-level integration, and VCL/FMX frameworks.',
+                'skills.csharp.desc': 'Architecting modern microservices and high-throughput web APIs with performance-first principles.',
+                'skills.csharp.current': 'Current Focus', 'skills.csharp.expert': 'Expert',
+                'skills.sql.desc': 'Complex query optimization, performance tuning, and schema design for transactional systems with millions of records.',
+                'skills.sql.item1': 'T-SQL Stored Procedures', 'skills.sql.item2': 'Index Optimization',
+                'skills.arch.title': 'Software Architecture',
+                'skills.arch.desc': 'Systemic thinking applied to code. Emphasizing maintainability and robustness through proven patterns.',
+                'skills.arch.solid': 'SOLID & Clean Code', 'skills.arch.solid.desc': 'Writing self-documenting, testable code.',
+                'skills.arch.patterns': 'Design Patterns', 'skills.arch.patterns.desc': 'Factory, Repository, Singleton, Observer.',
+                'skills.lead.title': 'Technical Leadership', 'skills.lead.desc': 'Mentoring junior engineers and setting architectural standards for distributed teams.',
+                'skills.cloud.title': 'Cloud & Ecosystem', 'skills.cloud.desc': 'Managing modern deployment pipelines and cloud infrastructure to ensure high availability and continuous delivery.',
+                'cloud.platform': 'Platform', 'cloud.azure': 'Azure Cloud', 'cloud.protocol': 'Protocol', 'cloud.rest': 'REST APIs', 'cloud.pipelines': 'Pipelines', 'cloud.cicd': 'CI/CD',
+                'exp.badge': 'Trajectory',
+                'exp.hero.title': "Professional <br/> <span class='text-primary-fixed-dim'>Roadmap</span>",
+                'exp.hero.desc': 'Over 8 years of architectural evolution at GVdasa, bridging the gap between legacy reliability and cloud-native SaaS scalability.',
+                'exp.glass.quote': '"Building bridges between Delphi systems and modern C# architectures."',
+                'exp.role1.date': '2026 - PRESENT', 'exp.role1.title': 'Tech Leader', 'exp.role1.sub': 'Strategic Innovation Unit',
+                'exp.role1.h': 'Architecture & Vision', 'exp.role1.desc': 'Leading the technological North Star for GVdasa. Orchestrating the transition of core services into a unified microservices landscape while maintaining technical debt governance.',
+                'exp.role2.date': '2025', 'exp.role2.title': 'Engineering Manager', 'exp.role2.sub': 'Talent & Execution',
+                'exp.role2.h': 'Team Scaling', 'exp.role2.desc': 'Focused on high-performance engineering culture. Streamlined deployment pipelines and mentored 15+ developers across cross-functional squads.',
+                'exp.role3.date': '2022 - 2025', 'exp.role3.title': 'Tech Leader', 'exp.role3.sub': 'Platform Migration',
+                'exp.role3.h': 'SaaS Migration Engine', 'exp.role3.desc': 'Spearheaded the migration of legacy Delphi ERP modules to Azure-based SaaS infrastructure. Designed the hybrid-cloud architecture that supported 200k+ concurrent users.',
+                'exp.role4.date': '2019 - 2022', 'exp.role4.title': 'Mid-level Developer', 'exp.role4.sub': 'Legacy Evolution',
+                'exp.role4.h': 'System Refactoring', 'exp.role4.desc': 'Optimization of critical financial modules in Delphi. Developed internal libraries to bridge Delphi data with new C# micro-integrations.',
+                'exp.role5.date': '2018 - 2019', 'exp.role5.title': 'Junior Developer', 'exp.role5.sub': 'Foundational Engineering',
+                'exp.role5.h': 'Core Maintenance', 'exp.role5.desc': 'Began the journey at GVdasa troubleshooting core ERP systems. Rapidly mastered Object Pascal and complex relational database schemas.',
+                'stats.title': 'Key Impact Metrics',
+                'stats.deploy': 'Reduction in deployment lead time through Azure DevOps automation.',
+                'stats.years': 'Years Experience', 'stats.users': 'Active SaaS Users',
+                'stats.leading': 'Currently Leading Strategy', 'stats.leading.desc': 'Defining the future of educational technology at GVdasa.',
+                'stats.cv': 'Download CV',
+                'contact.heading': "Send a <font color='#4edea3'>mail</font>",
+                'contact.sub': 'Reach out to discuss high-scale software architectures, .NET transformations, or technical leadership inquiries',
+                'contact.direct': 'Direct Channel', 'contact.network': 'Network', 'contact.network.name': 'LinkedIn Profile', 'contact.network.desc': 'Connect for professional inquiries',
+                'contact.source': 'Source Code', 'contact.source.name': 'GitHub Repository', 'contact.source.desc': 'Review architectural foundations',
+                'contact.avail': 'Global Availability', 'contact.tz': 'Remote | UTC-3 / UTC+1 Friendly',
+                'contact.linkedin': 'LinkedIn',
+                'footer.copy': '\u00a9 2026 Copy prohibited'
+            },
+            pt: {
+                'nav.home': 'In\u00edcio', 'nav.experience': 'Experi\u00eancia', 'nav.skills': 'Habilidades', 'nav.contact': 'Contato',
+                'home.title': 'LUCAS CARVALHO GOULART',
+                'sidebar.subtitle': 'Líder Técnico',
+                'home.hero.title': "Desenvolvendo Solu\u00e7\u00f5es <span class='text-secondary'>SaaS Robustas</span>",
+                'home.hero.desc': 'Estrategizando e executando transi\u00e7\u00f5es complexas de software corporativo. Especializado em conectar a confiabilidade do legado com a escalabilidade moderna do SaaS atrav\u00e9s das arquiteturas Delphi, C# e Cloud-native.',
+                'home.hero.badge': 'Dispon\u00edvel para Consultoria Estrat\u00e9gica',
+                'skills.title': "Arsenal <span class='text-secondary'>T\u00e9cnico</span>",
+                'skills.desc': 'Preenchendo a lacuna entre a confiabilidade dos sistemas legados e a escala moderna da nuvem. Foco especializado em arquitetura de alto desempenho e lideran\u00e7a estrat\u00e9gica de engenharia.',
+                'skills.legacy.title': 'Maestria em Legados',
+                'skills.legacy.desc': 'Experi\u00eancia em manter, escalar e modernizar sistemas de miss\u00e3o cr\u00edtica em larga escala constru\u00eddos em <strong>Delphi</strong>. Profundo entendimento de gest\u00e3o de mem\u00f3ria, integra\u00e7\u00e3o de baixo n\u00edvel e frameworks VCL/FMX.',
+                'skills.csharp.desc': 'Arquitetando microsservi\u00e7os modernos e APIs web de alto rendimento com foco total em performance.',
+                'skills.csharp.current': 'Foco Atual', 'skills.csharp.expert': 'Especialista',
+                'skills.sql.desc': 'Otimiza\u00e7\u00e3o complexa de consultas, ajuste de desempenho e design de esquemas para sistemas transacionais com milh\u00f5es de registros.',
+                'skills.sql.item1': 'Procedures (T-SQL)', 'skills.sql.item2': 'Otimiza\u00e7\u00e3o de \u00cdndices',
+                'skills.arch.title': 'Arquitetura de Software',
+                'skills.arch.desc': 'Pensamento sist\u00eamico aplicado ao c\u00f3digo. Enfatizando a manuten\u00e7\u00e3o e a robustez atrav\u00e9s de padr\u00f5es comprovados.',
+                'skills.arch.solid': 'SOLID & C\u00f3digo Limpo', 'skills.arch.solid.desc': 'Escrevendo c\u00f3digo test\u00e1vel e autodocumentado.',
+                'skills.arch.patterns': 'Padr\u00f5es de Projeto', 'skills.arch.patterns.desc': 'Factory, Repository, Singleton, Observer.',
+                'skills.lead.title': 'Lideran\u00e7a T\u00e9cnica', 'skills.lead.desc': 'Mentoria para engenheiros juniores e defini\u00e7\u00e3o de padr\u00f5es de arquitetura para equipes distribu\u00eddas.',
+                'skills.cloud.title': 'Ecossistema Nuvem', 'skills.cloud.desc': 'Gest\u00e3o de pipelines modernos de implanta\u00e7\u00e3o e infraestrutura em nuvem para garantir alta disponibilidade e entrega cont\u00ednua.',
+                'cloud.platform': 'Plataforma', 'cloud.azure': 'Azure Cloud', 'cloud.protocol': 'Protocolo', 'cloud.rest': 'APIs REST', 'cloud.pipelines': 'Pipelines', 'cloud.cicd': 'CI/CD',
+                'exp.badge': 'Trajet\u00f3ria',
+                'exp.hero.title': "Roteiro <br/> <span class='text-primary-fixed-dim'>Profissional</span>",
+                'exp.hero.desc': 'Mais de 8 anos de evolu\u00e7\u00e3o arquitet\u00f4nica na GVdasa, unindo a confiabilidade de sistemas legados \u00e0 escalabilidade SaaS nativa da nuvem.',
+                'exp.glass.quote': '"Construindo pontes entre sistemas Delphi e arquiteturas modernas em C#."',
+                'exp.role1.date': '2026 - ATUAL', 'exp.role1.title': 'L\u00edder T\u00e9cnico', 'exp.role1.sub': 'Unidade de Inova\u00e7\u00e3o Estrat\u00e9gica',
+                'exp.role1.h': 'Arquitetura & Vis\u00e3o', 'exp.role1.desc': 'Liderando a estrela-guia tecnol\u00f3gica da GVdasa. Orquestrando a transi\u00e7\u00e3o de servi\u00e7os centrais para um ecossistema unificado de microsservi\u00e7os mantendo a governan\u00e7a de d\u00edvida t\u00e9cnica.',
+                'exp.role2.date': '2025', 'exp.role2.title': 'Gerente de Engenharia', 'exp.role2.sub': 'Talento & Execu\u00e7\u00e3o',
+                'exp.role2.h': 'Escala de Equipe', 'exp.role2.desc': 'Foco em cultura de engenharia de alta performance. Otimizou pipelines de deploy e mentorou mais de 15 desenvolvedores em squads multifuncionais.',
+                'exp.role3.date': '2022 - 2025', 'exp.role3.title': 'L\u00edder T\u00e9cnico', 'exp.role3.sub': 'Migra\u00e7\u00e3o de Plataforma',
+                'exp.role3.h': 'Motor de Migra\u00e7\u00e3o SaaS', 'exp.role3.desc': 'Liderou a migra\u00e7\u00e3o de m\u00f3dulos ERP legados Delphi para infraestrutura SaaS baseada em Azure. Projetou a arquitetura h\u00edbrida que suportou mais de 200 mil usu\u00e1rios simult\u00e2neos.',
+                'exp.role4.date': '2019 - 2022', 'exp.role4.title': 'Desenvolvedor Pleno', 'exp.role4.sub': 'Evolu\u00e7\u00e3o de Legado',
+                'exp.role4.h': 'Refatora\u00e7\u00e3o de Sistemas', 'exp.role4.desc': 'Otimiza\u00e7\u00e3o de m\u00f3dulos financeiros cr\u00edticos em Delphi. Desenvolveu bibliotecas internas para conectar dados Delphi com micro-integra\u00e7\u00f5es em C#.',
+                'exp.role5.date': '2018 - 2019', 'exp.role5.title': 'Desenvolvedor J\u00fanior', 'exp.role5.sub': 'Engenharia Fundacional',
+                'exp.role5.h': 'Manuten\u00e7\u00e3o Central', 'exp.role5.desc': 'Iniciou a jornada na GVdasa corrigindo sistemas ERP centrais. Dominou rapidamente Object Pascal e esquemas relacionais complexos.',
+                'stats.title': 'M\u00e9tricas de Impacto',
+                'stats.deploy': 'Redu\u00e7\u00e3o no tempo de deploy atrav\u00e9s da automa\u00e7\u00e3o com Azure DevOps.',
+                'stats.years': 'Anos de Experi\u00eancia', 'stats.users': 'Usu\u00e1rios SaaS Ativos',
+                'stats.leading': 'Liderando Estrat\u00e9gia Atualmente', 'stats.leading.desc': 'Definindo o futuro da tecnologia educacional na GVdasa.',
+                'stats.cv': 'Baixar CV',
+                'contact.heading': "Envie um <font color='#4edea3'>e-mail</font>",
+                'contact.sub': 'Entre em contato para discutir arquiteturas de software em larga escala, transforma\u00e7\u00f5es .NET ou consultorias de lideran\u00e7a t\u00e9cnica',
+                'contact.direct': 'Canal Direto', 'contact.network': 'Rede', 'contact.network.name': 'Perfil LinkedIn', 'contact.network.desc': 'Conecte-se para consultas profissionais',
+                'contact.source': 'C\u00f3digo Fonte', 'contact.source.name': 'Reposit\u00f3rio GitHub', 'contact.source.desc': 'Revise as funda\u00e7\u00f5es arquitet\u00f4nicas',
+                'contact.avail': 'Disponibilidade Global', 'contact.tz': 'Remoto | UTC-3 / UTC+1',
+                'contact.linkedin': 'LinkedIn',
+                'footer.copy': '\u00a9 2026 Cópia proibida'
+            }
+        };
+        var _lang = 'en';
+        try { _lang = localStorage.getItem('siteLang') || 'en'; } catch (e) { }
+
+        function _applyI18n() {
+            var d = _i18n[_lang]; if (!d) return;
+            var els = document.querySelectorAll('[data-i18n]');
+            for (var i = 0; i < els.length; i++) {
+                var k = els[i].getAttribute('data-i18n');
+                if (d[k] !== undefined) els[i].innerHTML = d[k];
+            }
+            var lb = document.getElementById('lang-label');
+            if (lb) lb.textContent = (_lang === 'en') ? 'PT / EN' : 'EN / PT';
+            var mb = document.getElementById('mobile-lang-toggle');
+            if (mb) mb.textContent = (_lang === 'en') ? 'PT / EN' : 'EN / PT';
+        }
+
+        window.toggleLanguage = function () {
+            _lang = (_lang === 'en') ? 'pt' : 'en';
+            try { localStorage.setItem('siteLang', _lang); } catch (e) { }
+            _applyI18n();
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            _applyI18n();
+            // Scroll Spy
+            var ids = ['home', 'skills', 'experience', 'contact'], secs = [];
+            for (var i = 0; i < ids.length; i++) { var el = document.getElementById(ids[i]); if (el) secs.push({ id: ids[i], el: el }); }
+            function onScroll() {
+                var sy = window.pageYOffset + window.innerHeight / 3, cur = secs[0] ? secs[0].id : 'home';
+                for (var i = secs.length - 1; i >= 0; i--) { if (secs[i].el.offsetTop <= sy) { cur = secs[i].id; break; } }
+                var lnks = document.querySelectorAll('.sidebar-link,.nav-link');
+                for (var j = 0; j < lnks.length; j++) { lnks[j].classList.toggle('active', lnks[j].getAttribute('data-page') === cur); }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+            // Smooth scroll
+            var anchors = document.querySelectorAll('.sidebar-link,.nav-link');
+            for (var i = 0; i < anchors.length; i++) {
+                anchors[i].addEventListener('click', function (e) {
+                    var pid = this.getAttribute('data-page');
+                    if (pid === 'home') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                    else { var t = document.getElementById(pid); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } }
+                    var m = document.getElementById('mobile-menu'); if (m) m.classList.add('hidden');
+                });
+            }
+        });
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #0c1324;
+            color: #dce1fb;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(46, 52, 71, 0.6);
+            backdrop-filter: blur(20px);
+        }
+
+        .sidebar-link {
+            position: relative;
+            padding-left: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: transparent;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar-link.active {
+            color: #4edea3 !important;
+        }
+
+        .sidebar-link.active::before {
+            background: #4edea3;
+        }
+
+        .sidebar-link:hover {
+            color: #bcc7de !important;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+
+    <!-- Mobile Top Bar (visible only on small screens) -->
+    <header id="mobile-header" class="fixed top-0 w-full z-[999] bg-slate-900/80 backdrop-blur-xl shadow-lg lg:hidden">
+        <nav class="flex justify-between items-center px-6 py-4">
+            <div class="text-lg font-black tracking-tighter text-slate-200 font-headline uppercase"
+                data-i18n="home.title">LUCAS C. GOULART</div>
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                class="text-slate-200 w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-highest">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </nav>
+        <div id="mobile-menu"
+            class="hidden bg-slate-900/95 border-t border-slate-800 py-4 px-6 w-full shadow-2xl flex flex-col gap-3">
+            <a class="nav-link text-slate-300 font-headline font-bold text-sm tracking-widest uppercase hover:text-emerald-400 block py-2 border-b border-slate-800/50"
+                href="#" data-page="home" data-i18n="nav.home">Home</a>
+            <a class="nav-link text-slate-300 font-headline font-bold text-sm tracking-widest uppercase hover:text-emerald-400 block py-2 border-b border-slate-800/50"
+                href="#skills" data-page="skills" data-i18n="nav.skills">Skills</a>
+            <a class="nav-link text-slate-300 font-headline font-bold text-sm tracking-widest uppercase hover:text-emerald-400 block py-2 border-b border-slate-800/50"
+                href="#experience" data-page="experience" data-i18n="nav.experience">Experience</a>
+            <a class="nav-link text-slate-300 font-headline font-bold text-sm tracking-widest uppercase hover:text-emerald-400 block py-2"
+                href="#contact" data-page="contact" data-i18n="nav.contact">Contact</a>
+            <button id="mobile-lang-toggle" onclick="window.toggleLanguage()"
+                class="mt-2 bg-surface-container-highest px-4 py-2 rounded-lg text-xs font-label font-bold tracking-widest text-on-surface hover:text-secondary uppercase transition-all w-full">PT
+                / EN</button>
+        </div>
+    </header>
+
+    <!-- Desktop Sidebar (visible only on large screens) -->
+    <aside id="sidebar"
+        class="hidden lg:flex fixed left-0 top-0 h-screen w-64 z-[999] bg-[#0a0f1e]/90 backdrop-blur-2xl border-r border-white/5 flex-col justify-between py-10 px-8">
+        <!-- Logo -->
+        <div>
+            <div class="mb-12">
+                <h2 class="text-lg font-black tracking-tighter text-slate-100 font-headline uppercase leading-tight"
+                    data-i18n="home.title">LUCAS CARVALHO GOULART</h2>
+                <p class="text-[10px] font-label uppercase tracking-[0.25em] text-slate-500 mt-2"
+                    data-i18n="sidebar.subtitle">Architectural Strategist</p>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="flex flex-col gap-6 font-headline text-sm font-bold tracking-wide uppercase">
+                <a class="sidebar-link nav-link text-slate-500" href="#" data-page="home" data-i18n="nav.home">Home</a>
+                <a class="sidebar-link nav-link text-slate-500" href="#skills" data-page="skills"
+                    data-i18n="nav.skills">Skills</a>
+                <a class="sidebar-link nav-link text-slate-500" href="#experience" data-page="experience"
+                    data-i18n="nav.experience">Experience</a>
+                <a class="sidebar-link nav-link text-slate-500" href="#contact" data-page="contact"
+                    data-i18n="nav.contact">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Bottom: Language Toggle -->
+        <div>
+            <button id="lang-toggle" onclick="window.toggleLanguage()"
+                class="w-full bg-surface-container-highest/60 hover:bg-surface-container-highest px-4 py-3 rounded-xl text-xs font-label font-bold tracking-widest text-on-surface-variant hover:text-secondary uppercase transition-all flex items-center justify-center gap-2 border border-white/5">
+                <span class="material-symbols-outlined text-base">translate</span>
+                <span id="lang-label">PT / EN</span>
+            </button>
+            <div class="mt-6 flex gap-4 justify-center">
+                <a class="text-slate-600 hover:text-secondary transition-colors" href="#" title="LinkedIn"><span
+                        class="material-symbols-outlined text-xl">hub</span></a>
+                <a class="text-slate-600 hover:text-tertiary transition-colors" href="#" title="GitHub"><span
+                        class="material-symbols-outlined text-xl">terminal</span></a>
+                <a class="text-slate-600 hover:text-primary transition-colors" href="#" title="Email"><span
+                        class="material-symbols-outlined text-xl">mail</span></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Canvas -->
+    <main class="pt-20 lg:pt-12 px-6 md:px-12 lg:pl-80 lg:pr-16 max-w-none min-h-screen">
+        <!-- Hero Section -->
+        <section class="mb-32 relative" id="home">
+            <div class="flex flex-col lg:flex-row items-end lg:items-center gap-12">
+                <div class="flex-1 order-2 lg:order-1">
+                    <h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface leading-tight mb-8">
+                        <span data-i18n="home.hero.title">Developing Robust <span class='text-secondary'>SaaS
+                                Solutions</span></span>
+                    </h1>
+                    <p class="font-body text-xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                        <span data-i18n="home.hero.desc">Strategizing and executing complex enterprise software
+                            transitions. Specialized in bridging the gap between legacy reliability and modern SaaS
+                            scalability through Delphi, C#, and Cloud-native architectures.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div
+                            class="px-6 py-3 bg-surface-container-highest rounded-lg border border-outline-variant/10 font-label text-sm uppercase tracking-widest text-primary flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                            <span data-i18n="home.hero.badge">Available for Strategy Consulting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 order-1 lg:order-2 flex justify-end">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-secondary/10 blur-3xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="relative w-64 h-80 rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
+                            <img alt="Lucas Carvalho Goulart Profile" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvyz-ggtWFiQWou2O3BFqqyBn_ncp7DwgMkO__U3SDxqJU17-AzuEULnlydBaL_dgDyQlXCsmbyHqzvOdFZrjER9ZOYgH2rWNs-aT-EgiImMf0Vj443y5JX1_HMFFwd1Kosd7FVMKllWrniiHJYyhACutP3tQHqKYdscQ6CzxDojo9hNC2tMHYdq87yPm-lppbqhEl60Lmtesw_7GCA70CfO1D0K620ZOcmWy13HsGDV1IGQco7eVxB2HWukT_UFa8zqNpxe_i9w" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Full Skills Section Migrated from skills.html -->
+
+        <section class="mb-16 mt-32 relative" id="skills">
+            <div class="absolute -left-20 top-0 w-64 h-64 bg-secondary/5 blur-[120px] rounded-full"></div>
+            <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-background mb-6">
+                <span data-i18n="skills.title">Technical <span class="text-secondary">Arsenal</span></span>
+            </h1>
+            <p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                <span data-i18n="skills.desc">Bridging the gap between legacy reliability and modern cloud scale. A
+                    specialized focus on high-performance architecture and strategic engineering leadership.</span>
+            </p>
+        </section>
+        <!-- Bento Grid: Skill Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(180px,auto)]">
+            <!-- Legacy Mastery Card -->
+            <div
+                class="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-500">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-3 bg-tertiary-container rounded-lg text-tertiary">
+                            <span class="material-symbols-outlined">history_edu</span>
+                        </span>
+                        <h3 class="font-headline text-2xl font-bold text-on-background" data-i18n="skills.legacy.title">
+                            Legacy Mastery</h3>
+                    </div>
+                    <p class="font-body text-on-surface-variant text-lg mb-8 leading-relaxed">
+                        <span data-i18n="skills.legacy.desc">Expertise in maintaining, scaling, and modernizing
+                            large-scale mission-critical systems built on **Delphi**. Deep understanding of memory
+                            management, low-level integration, and VCL/FMX frameworks.</span>
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="px-4 py-1.5 bg-tertiary-container text-on-tertiary-container text-sm font-label font-medium rounded-full">Delphi
+                        11 Alexandria</span>
+                    <span
+                        class="px-4 py-1.5 bg-tertiary-container text-on-tertiary-container text-sm font-label font-medium rounded-full">Object
+                        Pascal</span>
+                    <span
+                        class="px-4 py-1.5 bg-tertiary-container text-on-tertiary-container text-sm font-label font-medium rounded-full">FastReport</span>
+                    <span
+                        class="px-4 py-1.5 bg-tertiary-container text-on-tertiary-container text-sm font-label font-medium rounded-full">DataSnap</span>
+                </div>
+            </div>
+            <!-- Modern Stack Card -->
+            <div class="md:col-span-4 bg-secondary-container rounded-xl p-8 flex flex-col text-on-secondary-container">
+                <div class="mb-auto">
+                    <div class="p-3 bg-white/10 w-fit rounded-lg mb-6">
+                        <span class="material-symbols-outlined text-3xl"
+                            style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-extrabold mb-4 tracking-tight">C# &amp; .NET Core</h3>
+                    <p class="font-body text-on-secondary-container/80 leading-snug">
+                        <span data-i18n="skills.csharp.desc">Architecting modern microservices and high-throughput web
+                            APIs with performance-first principles.</span>
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-on-secondary-container/10">
+                    <div
+                        class="flex justify-between items-center text-xs font-label uppercase tracking-widest opacity-60 mb-2">
+                        <span data-i18n="skills.csharp.current">Current Focus</span>
+                        <span data-i18n="skills.csharp.expert">Expert</span>
+                    </div>
+                    <div class="h-1.5 bg-on-secondary-container/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-on-secondary-container w-[95%]"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Database & SQL Card -->
+            <div class="md:col-span-4 bg-surface-container-high rounded-xl p-8 flex flex-col">
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">database</span>
+                <h3 class="font-headline text-2xl font-bold text-on-background mb-4">SQL Server</h3>
+                <p class="font-body text-on-surface-variant text-sm mb-6 leading-relaxed">
+                    <span data-i18n="skills.sql.desc">Complex query optimization, performance tuning, and schema design
+                        for transactional systems with millions of records.</span>
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-sm font-label text-on-surface">
+                        <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> <span
+                            data-i18n="skills.sql.item1">T-SQL Stored Procedures</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm font-label text-on-surface">
+                        <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> <span
+                            data-i18n="skills.sql.item2">Index Optimization</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Architecture & Strategy Card -->
+            <div
+                class="md:col-span-8 bg-surface-container-lowest border border-outline-variant/15 rounded-xl p-8 grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-4" data-i18n="skills.arch.title">
+                        Software Architecture</h3>
+                    <p class="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
+                        <span data-i18n="skills.arch.desc">Systemic thinking applied to code. Emphasizing
+                            maintainability and robustness through proven patterns.</span>
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary text-xl">architecture</span>
+                            <div>
+                                <h4 class="font-headline text-sm font-bold text-on-background"
+                                    data-i18n="skills.arch.solid">SOLID &amp; Clean Code</h4>
+                                <p class="text-xs text-on-surface-variant" data-i18n="skills.arch.solid.desc">Writing
+                                    self-documenting, testable code.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary text-xl">schema</span>
+                            <div>
+                                <h4 class="font-headline text-sm font-bold text-on-background"
+                                    data-i18n="skills.arch.patterns">Design Patterns</h4>
+                                <p class="text-xs text-on-surface-variant" data-i18n="skills.arch.patterns.desc">
+                                    Factory, Repository, Singleton, Observer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface-container rounded-lg p-6 flex flex-col justify-center items-center text-center">
+                    <span class="material-symbols-outlined text-4xl text-on-primary-container mb-2">groups</span>
+                    <h4 class="font-headline text-xl font-bold text-on-background" data-i18n="skills.lead.title">
+                        Technical Leadership</h4>
+                    <p class="text-sm text-on-surface-variant mt-2">
+                        <span data-i18n="skills.lead.desc">Mentoring junior engineers and setting architectural
+                            standards for distributed teams.</span>
+                    </p>
+                </div>
+            </div>
+            <!-- Cloud & DevOps Section (Bottom Row) -->
+            <div
+                class="md:col-span-12 bg-[#1e293b]/30 rounded-xl p-10 mt-6 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="max-w-md">
+                    <h3 class="font-headline text-3xl font-bold text-on-background mb-4" data-i18n="skills.cloud.title">
+                        Cloud &amp; Ecosystem</h3>
+                    <p class="font-body text-on-surface-variant leading-relaxed">
+                        <span data-i18n="skills.cloud.desc">Managing modern deployment pipelines and cloud
+                            infrastructure to ensure high availability and continuous delivery.</span>
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div
+                        class="px-6 py-4 bg-surface-container-highest rounded-xl flex items-center gap-4 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">cloud</span>
+                        <div>
+                            <p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant"
+                                data-i18n="cloud.platform">Platform</p>
+                            <p class="font-headline font-bold text-on-background" data-i18n="cloud.azure">Azure Cloud
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-surface-container-highest rounded-xl flex items-center gap-4 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">api</span>
+                        <div>
+                            <p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant"
+                                data-i18n="cloud.protocol">Protocol</p>
+                            <p class="font-headline font-bold text-on-background" data-i18n="cloud.rest">REST APIs</p>
+                        </div>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-surface-container-highest rounded-xl flex items-center gap-4 border border-outline-variant/10">
+                        <span class="material-symbols-outlined text-primary">terminal</span>
+                        <div>
+                            <p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant"
+                                data-i18n="cloud.pipelines">Pipelines</p>
+                            <p class="font-headline font-bold text-on-background" data-i18n="cloud.cicd">CI/CD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Skills Section -->
+
+        <div id="experience" class="pt-24 mt-24 border-t border-outline-variant/10"></div>
+        <!-- Hero Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-24">
+            <div class="lg:col-span-7">
+                <p class="text-secondary font-label font-bold tracking-widest uppercase mb-4"><span
+                        data-i18n="exp.badge">Trajectory</span></p>
+                <h1 class="text-6xl md:text-8xl font-headline font-bold tracking-tighter leading-none mb-8">
+                    <span data-i18n="exp.hero.title">Professional <br /> <span
+                            class='text-primary-fixed-dim'>Roadmap</span></span>
+                </h1>
+                <p class="text-xl md:text-2xl text-on-surface-variant font-body max-w-2xl leading-relaxed">
+                    <span data-i18n="exp.hero.desc">Over 8 years of architectural evolution at GVdasa, bridging the gap
+                        between legacy reliability and cloud-native SaaS scalability.</span>
+                </p>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden relative group">
+                    <img alt="Lucas Carvalho Goulart" class="w-full h-full object-cover grayscale contrast-125"
+                        data-alt="Professional studio portrait of a man with focused expression, dramatic side lighting, high contrast black and white architectural style"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvyz-ggtWFiQWou2O3BFqqyBn_ncp7DwgMkO__U3SDxqJU17-AzuEULnlydBaL_dgDyQlXCsmbyHqzvOdFZrjER9ZOYgH2rWNs-aT-EgiImMf0Vj443y5JX1_HMFFwd1Kosd7FVMKllWrniiHJYyhACutP3tQHqKYdscQ6CzxDojo9hNC2tMHYdq87yPm-lppbqhEl60Lmtesw_7GCA70CfO1D0K620ZOcmWy13HsGDV1IGQco7eVxB2HWukT_UFa8zqNpxe_i9w" />
+                    <div class="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+                </div>
+                <!-- Overlapping Glass Block -->
+                <div
+                    class="absolute -bottom-6 -left-12 p-8 bg-surface-variant/60 backdrop-blur-xl rounded-lg hidden md:block max-w-xs border-l-4 border-secondary">
+                    <span class="material-symbols-outlined text-secondary text-4xl mb-4"
+                        data-icon="architecture">architecture</span>
+                    <p class="text-on-surface font-body font-medium italic" data-i18n="exp.glass.quote">"Building
+                        bridges between Delphi systems and modern C# architectures."</p>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Timeline -->
+        <section class="relative">
+            <!-- Central Line -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-surface-container-highest"></div>
+            <div class="space-y-24">
+                <!-- Role: Tech Leader (Current) -->
+                <div class="relative flex flex-col md:flex-row items-center group">
+                    <div class="md:w-1/2 md:pr-16 text-left md:text-right mb-8 md:mb-0">
+                        <span class="text-secondary font-label font-black text-xl mb-2 block"
+                            data-i18n="exp.role1.date">2026 - PRESENT</span>
+                        <h3 class="text-3xl font-headline font-bold text-on-surface" data-i18n="exp.role1.title">Tech
+                            Leader</h3>
+                        <p class="text-primary font-label text-sm uppercase tracking-widest mt-1"
+                            data-i18n="exp.role1.sub">Strategic Innovation Unit</p>
+                    </div>
+                    <div
+                        class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary shadow-[0_0_20px_rgba(78,222,163,0.6)] z-10">
+                    </div>
+                    <div class="md:w-1/2 md:pl-16">
+                        <div
+                            class="bg-surface-container-high p-8 rounded-xl border-l-0 md:border-l-4 border-secondary transition-all hover:bg-surface-container-highest">
+                            <h4 class="text-xl font-headline font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary" data-icon="hub">hub</span>
+                                <span data-i18n="exp.role1.h">Architecture &amp; Vision</span>
+                            </h4>
+                            <p class="text-on-surface-variant font-body mb-6 leading-relaxed"
+                                data-i18n="exp.role1.desc">
+                                Leading the technological North Star for GVdasa. Orchestrating the transition of core
+                                services into a unified microservices landscape while maintaining technical debt
+                                governance.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-tertiary-container text-on-tertiary-container">Azure
+                                    Cloud</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-tertiary-container text-on-tertiary-container">SaaS
+                                    Strategy</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-secondary-container text-on-secondary-container">C#
+                                    .NET 8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Role: Engineering Manager -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                    <div class="md:w-1/2 md:pl-16 text-left mb-8 md:mb-0">
+                        <span class="text-primary font-label font-black text-xl mb-2 block"
+                            data-i18n="exp.role2.date">2025</span>
+                        <h3 class="text-3xl font-headline font-bold text-on-surface" data-i18n="exp.role2.title">
+                            Engineering Manager</h3>
+                        <p class="text-primary font-label text-sm uppercase tracking-widest mt-1"
+                            data-i18n="exp.role2.sub">Talent &amp; Execution</p>
+                    </div>
+                    <div
+                        class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-fixed-dim z-10">
+                    </div>
+                    <div class="md:w-1/2 md:pr-16">
+                        <div
+                            class="bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-high text-left md:text-right">
+                            <h4 class="text-xl font-headline font-bold mb-4 flex items-center md:justify-end gap-2">
+                                <span data-i18n="exp.role2.h">Team Scaling</span>
+                                <span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+                            </h4>
+                            <p class="text-on-surface-variant font-body mb-6 leading-relaxed"
+                                data-i18n="exp.role2.desc">
+                                Focused on high-performance engineering culture. Streamlined deployment pipelines and
+                                mentored 15+ developers across cross-functional squads.
+                            </p>
+                            <div class="flex flex-wrap md:justify-end gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Leadership</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Agile
+                                    Governance</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Ops
+                                    Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Role: Tech Leader (22-25) -->
+                <div class="relative flex flex-col md:flex-row items-center group">
+                    <div class="md:w-1/2 md:pr-16 text-left md:text-right mb-8 md:mb-0">
+                        <span class="text-secondary font-label font-black text-xl mb-2 block"
+                            data-i18n="exp.role3.date">2022 - 2025</span>
+                        <h3 class="text-3xl font-headline font-bold text-on-surface" data-i18n="exp.role3.title">Tech
+                            Leader</h3>
+                        <p class="text-primary font-label text-sm uppercase tracking-widest mt-1"
+                            data-i18n="exp.role3.sub">Platform Migration</p>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary z-10">
+                    </div>
+                    <div class="md:w-1/2 md:pl-16">
+                        <div
+                            class="bg-surface-container-high p-8 rounded-xl border-l-0 md:border-l-4 border-secondary transition-all hover:bg-surface-container-highest">
+                            <h4 class="text-xl font-headline font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary"
+                                    data-icon="cloud_sync">cloud_sync</span>
+                                <span data-i18n="exp.role3.h">SaaS Migration Engine</span>
+                            </h4>
+                            <p class="text-on-surface-variant font-body mb-6 leading-relaxed"
+                                data-i18n="exp.role3.desc">
+                                Spearheaded the migration of legacy Delphi ERP modules to Azure-based SaaS
+                                infrastructure. Designed the hybrid-cloud architecture that supported 200k+ concurrent
+                                users.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-tertiary-container text-on-tertiary-container">Migration
+                                    Strategy</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-tertiary-container text-on-tertiary-container">Azure
+                                    DevOps</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-secondary-container text-on-secondary-container">RESTful
+                                    APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Role: Mid Delphi -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                    <div class="md:w-1/2 md:pl-16 text-left mb-8 md:mb-0">
+                        <span class="text-tertiary font-label font-black text-xl mb-2 block"
+                            data-i18n="exp.role4.date">2019 - 2022</span>
+                        <h3 class="text-3xl font-headline font-bold text-on-surface" data-i18n="exp.role4.title">
+                            Mid-level Developer</h3>
+                        <p class="text-primary font-label text-sm uppercase tracking-widest mt-1"
+                            data-i18n="exp.role4.sub">Legacy Evolution</p>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-tertiary z-10">
+                    </div>
+                    <div class="md:w-1/2 md:pr-16">
+                        <div
+                            class="bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-high text-left md:text-right">
+                            <h4 class="text-xl font-headline font-bold mb-4 flex items-center md:justify-end gap-2">
+                                <span data-i18n="exp.role4.h">System Refactoring</span>
+                                <span class="material-symbols-outlined text-tertiary"
+                                    data-icon="code_blocks">code_blocks</span>
+                            </h4>
+                            <p class="text-on-surface-variant font-body mb-6 leading-relaxed"
+                                data-i18n="exp.role4.desc">
+                                Optimization of critical financial modules in Delphi. Developed internal libraries to
+                                bridge Delphi data with new C# micro-integrations.
+                            </p>
+                            <div class="flex flex-wrap md:justify-end gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-tertiary-container text-on-tertiary-container">Delphi
+                                    10+</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">SQL
+                                    Server</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Integration
+                                    Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Role: Junior Delphi -->
+                <div class="relative flex flex-col md:flex-row items-center group">
+                    <div class="md:w-1/2 md:pr-16 text-left md:text-right mb-8 md:mb-0">
+                        <span class="text-primary font-label font-black text-xl mb-2 block"
+                            data-i18n="exp.role5.date">2018 - 2019</span>
+                        <h3 class="text-3xl font-headline font-bold text-on-surface" data-i18n="exp.role5.title">Junior
+                            Developer</h3>
+                        <p class="text-primary font-label text-sm uppercase tracking-widest mt-1"
+                            data-i18n="exp.role5.sub">Foundational Engineering</p>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-outline z-10">
+                    </div>
+                    <div class="md:w-1/2 md:pl-16">
+                        <div
+                            class="bg-surface-container-high p-8 rounded-xl transition-all hover:bg-surface-container-highest">
+                            <h4 class="text-xl font-headline font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-icon="terminal">terminal</span>
+                                <span data-i18n="exp.role5.h">Core Maintenance</span>
+                            </h4>
+                            <p class="text-on-surface-variant font-body mb-6 leading-relaxed"
+                                data-i18n="exp.role5.desc">
+                                Began the journey at GVdasa troubleshooting core ERP systems. Rapidly mastered Object
+                                Pascal and complex relational database schemas.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Delphi
+                                    7</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Debugging</span>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-label bg-surface-container-highest text-on-surface">Relational
+                                    DB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Grid (Bento Style) -->
+        <section class="mt-32">
+            <h2 class="text-4xl font-headline font-bold mb-12 text-center uppercase tracking-widest"
+                data-i18n="stats.title">Key Impact Metrics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="material-symbols-outlined text-secondary text-5xl mb-6"
+                            data-icon="speed">speed</span>
+                        <h5 class="text-5xl font-headline font-bold text-secondary mb-2">40%</h5>
+                        <p class="text-xl font-body text-on-surface-variant" data-i18n="stats.deploy">Reduction in
+                            deployment lead time through Azure DevOps automation.</p>
+                    </div>
+                </div>
+                <div class="bg-surface-container-high p-8 rounded-xl flex flex-col justify-center text-center">
+                    <h5 class="text-4xl font-headline font-bold text-tertiary mb-2">8+</h5>
+                    <p class="font-label text-sm uppercase tracking-widest" data-i18n="stats.years">Years Experience</p>
+                </div>
+                <div class="bg-surface-container-high p-8 rounded-xl flex flex-col justify-center text-center">
+                    <h5 class="text-4xl font-headline font-bold text-primary mb-2">200k+</h5>
+                    <p class="font-label text-sm uppercase tracking-widest" data-i18n="stats.users">Active SaaS Users
+                    </p>
+                </div>
+                <div
+                    class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/20 p-8 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-secondary text-3xl"
+                                data-icon="rocket_launch">rocket_launch</span>
+                        </div>
+                        <div>
+                            <h5 class="text-2xl font-headline font-bold" data-i18n="stats.leading">Currently Leading
+                                Strategy</h5>
+                            <p class="text-on-surface-variant" data-i18n="stats.leading.desc">Defining the future of
+                                educational technology at GVdasa.</p>
+                        </div>
+                    </div>
+                    <button
+                        class="hidden lg:flex items-center gap-2 bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label font-bold uppercase transition-transform active:scale-95">
+                        <span data-i18n="stats.cv">Download CV</span>
+                        <span class="material-symbols-outlined" data-icon="download">download</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="mb-32 pt-24 mt-24 border-t border-outline-variant/10">
+
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-4">
+                    <h1 class="text-4xl md:text-6xl font-headline font-bold text-primary tracking-tighter mb-4"
+                        data-i18n="contact.heading">Send a <font color="#4edea3">mail</font>
+                    </h1>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto" data-i18n="contact.sub">Reach out to discuss
+                        high-scale software architectures, .NET transformations, or technical leadership inquiries</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-surface-container-high p-8 rounded-xl group hover:bg-surface-container-highest transition-all duration-300 cursor-default border-t-4 border-secondary flex flex-col justify-between min-h-[200px]">
+                        <div>
+                            <h3 class="text-xs font-label uppercase tracking-widest text-secondary mb-2"
+                                data-i18n="contact.direct">Direct Channel</h3>
+                            <p class="text-lg font-headline font-semibold text-on-surface break-all">
+                                lc-goulart@hotmail.com</p>
+                        </div>
+                        <div class="flex justify-end"><span
+                                class="material-symbols-outlined text-secondary text-4xl opacity-50 group-hover:opacity-100 transition-opacity">alternate_email</span>
+                        </div>
+                    </div><a
+                        class="bg-surface-container-high p-8 rounded-xl group hover:bg-surface-container-highest transition-all duration-300 border-t-4 border-primary flex flex-col justify-between min-h-[200px]"
+                        href="#">
+                        <div>
+                            <h3 class="text-xs font-label uppercase tracking-widest text-primary mb-2"
+                                data-i18n="contact.network">Network</h3>
+                            <p class="text-lg font-headline font-semibold text-on-surface"
+                                data-i18n="contact.network.name">LinkedIn Profile</p>
+                            <p class="text-sm text-on-surface-variant mt-1" data-i18n="contact.network.desc">Connect for
+                                professional inquiries</p>
+                        </div>
+                        <div class="flex justify-end"><span
+                                class="material-symbols-outlined text-primary text-4xl opacity-50 group-hover:opacity-100 transition-opacity">hub</span>
+                        </div>
+                    </a><a
+                        class="bg-surface-container-high p-8 rounded-xl group hover:bg-surface-container-highest transition-all duration-300 border-t-4 border-tertiary flex flex-col justify-between min-h-[200px]"
+                        href="#">
+                        <div>
+                            <h3 class="text-xs font-label uppercase tracking-widest text-tertiary mb-2"
+                                data-i18n="contact.source">Source Code</h3>
+                            <p class="text-lg font-headline font-semibold text-on-surface"
+                                data-i18n="contact.source.name">GitHub Repository</p>
+                            <p class="text-sm text-on-surface-variant mt-1" data-i18n="contact.source.desc">Review
+                                architectural foundations</p>
+                        </div>
+                        <div class="flex justify-end"><span
+                                class="material-symbols-outlined text-tertiary text-4xl opacity-50 group-hover:opacity-100 transition-opacity">terminal</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="max-w-md mx-auto w-full">
+                    <div
+                        class="bg-surface-container p-6 rounded-xl flex items-center justify-center gap-4 border border-outline-variant/10 shadow-lg">
+                        <div
+                            class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">public</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-label text-on-surface-variant" data-i18n="contact.avail">Global
+                                Availability</p>
+                            <p class="text-sm font-headline font-medium" data-i18n="contact.tz">Remote | UTC-3 / UTC+1
+                                Friendly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="lg:pl-64 w-full py-12 px-12 mt-24 bg-[#0a0f1e] flex flex-col md:flex-row justify-between items-center border-t border-[#bcc7de]/5">
+        <div class="mb-6 md:mb-0">
+            <p class="font-body text-sm tracking-tight text-[#bcc7de]/50" data-i18n="footer.copy">
+                © 2024 The Architectural Strategist. Built with C# Precision.
+            </p>
+        </div>
+        <div class="flex items-center gap-8">
+            <a class="font-body text-sm text-[#bcc7de]/50 hover:text-[#4edea3] transition-colors" href="#"><span
+                    data-i18n="contact.linkedin">LinkedIn</span></a>
+            <a class="font-body text-sm text-[#bcc7de]/50 hover:text-[#4edea3] transition-colors" href="#">GitHub</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
